@@ -32,10 +32,15 @@ Ext.define('Crud.view.main.List', {
       
       fields.forEach(function(field) {
         if(field.name) {
+          var fieldXType = 'textfield';
+          switch(field.type) {
+            case 'integer':
+              fieldXType = 'numberfield'; break;
+          }
           var column = Ext.create('Ext.grid.column.Column', {
             text: field.name,
             dataIndex: field.name,
-            editor: 'textfield'
+            editor: fieldXType,
           });
           gridView.headerCt.insert(position, column);
           gridView.getView().refresh();
@@ -49,5 +54,19 @@ Ext.define('Crud.view.main.List', {
     plugins: {
         ptype: 'cellediting',
         clicksToEdit: 1
+    },
+    
+    // Dispatch named listener and handler methods to this instance
+    defaultListenerScope: true,
+    
+    tbar: [{
+        text: 'Add Column',
+        tooltip: 'Add a new column',
+        handler: 'onAddColumn'
+    }],
+    
+    onAddColumn: function() {
+      console.log('adding column')
+      this.fieldsToColumns([{name: 'new_column'}])
     }
 });
