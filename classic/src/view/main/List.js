@@ -17,13 +17,16 @@ Ext.define('Crud.view.main.List', {
 
     listeners: {
         boxready: function() {
-            this.getStore().load();
-            this.fieldsToColumns(this.store.getModel().getFields());
+            var self = this;
+            this.getStore().load({
+              callback: function(records, operation, success) {
+                self.fieldsToColumns(self.store.getModel().getFields());
+              }
+            });
         }
     },
     
     fieldsToColumns: function(fields) {
-      console.log(fields);
       var gridView = Ext.ComponentQuery.query("gridpanel")[0],
         position = gridView.columns.length;
       
