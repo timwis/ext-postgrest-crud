@@ -27,8 +27,7 @@ Ext.define('Crud.view.main.List', {
     },
     
     fieldsToColumns: function(fields) {
-      var gridView = Ext.ComponentQuery.query("gridpanel")[0],
-        position = gridView.columns.length;
+      var self = this;
       
       fields.forEach(function(field) {
         if(field.name) {
@@ -37,14 +36,14 @@ Ext.define('Crud.view.main.List', {
             case 'integer':
               fieldXType = 'numberfield'; break;
           }
-          var column = Ext.create('Ext.grid.column.Column', {
+          var column = {
             text: field.name,
             dataIndex: field.name,
             editor: fieldXType,
-          });
-          gridView.headerCt.insert(position, column);
-          gridView.getView().refresh();
-          position++;
+          };
+          self.headerCt.insert(self.columns.length, Ext.create('Ext.grid.column.Column', column));
+          self.columns.push(column);
+          self.getView().refresh();
         }
       });
     },
@@ -66,7 +65,11 @@ Ext.define('Crud.view.main.List', {
     }],
     
     onAddColumn: function() {
-      console.log('adding column')
-      this.fieldsToColumns([{name: 'new_column'}])
+      var self = this;
+      Ext.Msg.prompt('Add Column', 'New column name:', function(btn, text) {
+        if(btn === 'ok') {
+          self.fieldsToColumns([{name: text}])
+        }
+      });
     }
 });
