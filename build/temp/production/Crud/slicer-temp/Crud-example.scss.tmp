@@ -3,7 +3,6 @@ $image-search-path: '/Users/tim/Sites/crud/build/production/Crud/classic/resourc
 $theme-name:  dynamic( 'theme-triton' );
 $include-crud-application: dynamic(true);;
 $include-crud-model-speaker: dynamic(true);;
-$include-crud-store-personnel: dynamic(true);;
 $include-crud-store-speakers: dynamic(true);;
 $include-crud-view-main-list: dynamic(true);;
 $include-crud-view-main-main: dynamic(true);;
@@ -1348,4 +1347,4 @@ $Crud-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $Crud-resource-root;
 $relative-image-path-for-uis: $Crud-resource-path;
-@import '../../../../../classic/sass/src/view/main/Main';
+@import '../../../../../sass/src/view/main/Main';
