@@ -4,7 +4,16 @@ Ext.define('Crud.model.Speaker', {
     // the path will be used to load fields from the Postgrest server
     tableUrl: 'https://postgrest.herokuapp.com/speakers',
     path: '/speakers',
-    fetchRemoteFields: true,
+    //fetchRemoteFields: true,
+    
+    fields: [
+      {name: 'name', allowNull: false},
+      {name: 'twitter'},
+      {name: 'avatar_url', allowNull: false},
+      {name: 'bio'},
+      {name: 'featured', allowNull: false},
+      {name: 'lineup_order'}
+    ],
     
     // Create field
     createField: function(field, cb) {
