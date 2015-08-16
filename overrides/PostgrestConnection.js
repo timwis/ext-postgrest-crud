@@ -1,4 +1,4 @@
-/*Ext.define('Crud.overrides.PostgrestConnection', {
+Ext.define('Crud.overrides.PostgrestConnection', {
 	override: 'Jarvus.connection.Postgrest'
 }, function(PostgrestConnection) {
     var pageParams = Ext.Object.fromQueryString(location.search);
@@ -8,7 +8,6 @@
         PostgrestConnection.setHost(pageParams.postgrestHost);
     } else {
         PostgrestConnection.setConfig('useSSL', true);
-        PostgrestConnection.setHost('postgrest.herokuapp.com');
-        //PostgrestConnection.setPathPrefix('/spark2/postgrest');
+        PostgrestConnection.setHost('phlcrud.herokuapp.com');
     }
-});*/
+});
