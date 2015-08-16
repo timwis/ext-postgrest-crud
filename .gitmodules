@@ -1,0 +1,3 @@
+[submodule "packages/jarvus-postgrest-apikit"]
+	path = packages/jarvus-postgrest-apikit
+	url = https://github.com/timwis/jarvus-postgrest-apikit.git
