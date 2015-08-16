@@ -7,7 +7,10 @@ Ext.define('Crud.view.main.List', {
     controller: 'spreadsheet',
 
     requires: [
-        'Crud.store.Speakers'
+        'Crud.store.Speakers',
+        'Crud.controller.Spreadsheet',
+        'Ext.grid.selection.SpreadsheetModel',
+        'Ext.grid.plugin.Clipboard'
     ],
 
     title: 'Spreadsheet',
@@ -24,7 +27,6 @@ Ext.define('Crud.view.main.List', {
 
     plugins: [
       'clipboard',
-      'selectionreplicator',
       {
         ptype: 'cellediting',
         clicksToEdit: 2
@@ -43,7 +45,6 @@ Ext.define('Crud.view.main.List', {
                 self.fieldsToColumns(self.store.getModel().getFields());
               }
             });
-            console.log(this.getStore().getModel().validators);
         },
         itemcontextmenu: function(view, record, item, index, e, eOpts) {
             console.log('right-clicked');
