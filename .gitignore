@@ -5,3 +5,4 @@ ext
 bootstrap.js
 .log
 sass/example
+packages/*
