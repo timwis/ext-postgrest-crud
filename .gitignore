@@ -1,6 +1,7 @@
-.sencha
 .architect
 .sass-cache
 build
 ext
 bootstrap.js
+.log
+sass/example
