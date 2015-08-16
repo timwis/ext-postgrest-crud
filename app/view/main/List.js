@@ -4,22 +4,35 @@
 Ext.define('Crud.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
-    //controller: 'grid',
+    controller: 'spreadsheet',
 
     requires: [
         'Crud.store.Speakers'
     ],
 
-    columns: [
-      {xtype: 'rownumberer'}
-    ],
-
-    columnLines: true,
-
-    title: 'Speakers',
+    title: 'Spreadsheet',
 
     store: {
         type: 'speakers'
+    },
+
+    selModel: {
+      type: 'spreadsheet',
+      columnSelect: true,
+      rowSelect: true
+    },
+
+    plugins: [
+      'clipboard',
+      'selectionreplicator',
+      {
+        ptype: 'cellediting',
+        clicksToEdit: 2
+      }
+    ],
+
+    viewConfig: {
+      columnLines: true
     },
 
     listeners: {
@@ -44,7 +57,8 @@ Ext.define('Crud.view.main.List', {
                 }]
             }).showAt(e.getXY());
             e.stopEvent();
-        }
+        },
+        headermenucreate: 'onHeaderMenuCreate'
     },
 
     fieldsToColumns: function(fields) {
@@ -58,6 +72,7 @@ Ext.define('Crud.view.main.List', {
               fieldXType = 'numberfield'; break;
           }
           var column = {
+            id: field.name,
             text: field.name,
             dataIndex: field.name,
             editor: {
@@ -73,15 +88,8 @@ Ext.define('Crud.view.main.List', {
       });
     },
 
-    selModel: 'cellmodel',
-
-    plugins: {
-        ptype: 'cellediting',
-        clicksToEdit: 1
-    },
-
     // Dispatch named listener and handler methods to this instance
-    defaultListenerScope: true,
+    //defaultListenerScope: true,
 
     tbar: [{
         text: 'Add Row',
@@ -91,33 +99,5 @@ Ext.define('Crud.view.main.List', {
         text: 'Add Column',
         tooltip: 'Add a new column',
         handler: 'onAddColumn'
-    }],
-
-    onAddColumn: function() {
-      var self = this;
-      Ext.Msg.prompt('Add Column', 'New column name:', function(btn, text) {
-        if(btn === 'ok') {
-          self.getStore().getModel().prototype.createField(text, 'text', function(response) {
-            console.log('Success', response);
-            self.fieldsToColumns([{name: text}]);
-          });
-        }
-      });
-    },
-
-    onAddRow: function(){
-        // Create a model instance
-        var rec = new Crud.model.Speaker({});
-
-        this.getStore().insert(0, rec);
-        this.findPlugin('cellediting').startEditByPosition({
-            row: 0,
-            column: 0
-        });
-    },
-
-    onRemoveRow: function(grid, rowIndex){
-        console.log('onRemoveRow')
-        this.getStore().removeAt(rowIndex);
-    }
+    }]
 });

@@ -2,7 +2,7 @@ $app-name:  dynamic( 'Crud' );
 $image-search-path: '/Users/tim/Sites/crud/build/production/Crud/classic/resources';
 $theme-name:  dynamic( 'theme-triton' );
 $include-crud-application: dynamic(true);;
-$include-crud-controller-grid: dynamic(true);;
+$include-crud-controller-spreadsheet: dynamic(true);;
 $include-crud-model-speaker: dynamic(true);;
 $include-crud-overrides-postgrestconnection: dynamic(true);;
 $include-crud-store-speakers: dynamic(true);;

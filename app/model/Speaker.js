@@ -34,5 +34,36 @@ Ext.define('Crud.model.Speaker', {
         },
         success: cb
       });
+    },
+
+    // Drop field
+    dropField: function(name, cb) {
+      var self = this;
+      console.log('Dropping...')
+      Jarvus.connection.Postgrest.request({
+        method: 'POST',
+        url: '/rpc/drop_column',
+        jsonData: {
+          table_name: 'candidates',
+          column_name: name
+        },
+        success: cb
+      });
+    },
+
+    // Rename field
+    renameField: function(old_name, new_name, cb) {
+      var self = this;
+      console.log('Renaming...')
+      Jarvus.connection.Postgrest.request({
+        method: 'POST',
+        url: '/rpc/rename_column',
+        jsonData: {
+          table_name: 'candidates',
+          old_column_name: old_name,
+          new_column_name: new_name
+        },
+        success: cb
+      });
     }
 });
