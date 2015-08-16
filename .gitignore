@@ -6,3 +6,4 @@ bootstrap.js
 .log
 sass/example
 packages/*
+!packages/.gitkeep
