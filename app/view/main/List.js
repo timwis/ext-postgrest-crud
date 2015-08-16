@@ -7,7 +7,7 @@ Ext.define('Crud.view.main.List', {
     controller: 'spreadsheet',
 
     requires: [
-        'Crud.store.Speakers',
+        'Crud.store.Records',
         'Crud.controller.Spreadsheet',
         'Ext.grid.selection.SpreadsheetModel',
         'Ext.grid.plugin.Clipboard'
@@ -15,9 +15,9 @@ Ext.define('Crud.view.main.List', {
 
     title: 'Spreadsheet',
 
-    store: {
-        type: 'speakers'
-    },
+    /*store: {
+        type: 'records'
+    },*/
 
     selModel: {
       type: 'spreadsheet',

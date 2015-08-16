@@ -3,9 +3,12 @@ $image-search-path: '/Users/tim/Sites/crud/build/development/Crud/classic/resour
 $theme-name:  dynamic( 'theme-triton' );
 $include-crud-application: dynamic(true);;
 $include-crud-controller-spreadsheet: dynamic(true);;
+$include-crud-model-candidate: dynamic(true);;
+$include-crud-model-record: dynamic(true);;
+$include-crud-model-session: dynamic(true);;
 $include-crud-model-speaker: dynamic(true);;
 $include-crud-overrides-postgrestconnection: dynamic(true);;
-$include-crud-store-speakers: dynamic(true);;
+$include-crud-store-records: dynamic(true);;
 $include-crud-view-main-list: dynamic(true);;
 $include-crud-view-main-main: dynamic(true);;
 $include-crud-view-main-maincontroller: dynamic(true);;

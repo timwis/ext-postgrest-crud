@@ -1,8 +1,8 @@
-Ext.define('Crud.store.Speakers', {
+Ext.define('Crud.store.Records', {
     extend: 'Ext.data.Store',
 
-    model: 'Crud.model.Speaker',
-    alias: 'store.speakers',
+    //model: 'Crud.model.Candidate',
+    alias: 'store.records',
 
     pageSize: 100,
 

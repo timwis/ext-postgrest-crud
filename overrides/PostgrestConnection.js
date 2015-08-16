@@ -9,5 +9,6 @@ Ext.define('Crud.overrides.PostgrestConnection', {
     } else {
         PostgrestConnection.setConfig('useSSL', true);
         PostgrestConnection.setHost('phlcrud.herokuapp.com');
+				//PostgrestConnection.setHost('postgrest.herokuapp.com');
     }
 });

@@ -15,7 +15,9 @@ Ext.define('Crud.view.main.Main', {
 
         'Crud.view.main.MainController',
         'Crud.view.main.MainModel',
-        'Crud.view.main.List'
+        'Crud.view.main.List',
+
+        'Crud.model.Candidate'
     ],
 
     controller: 'main',
@@ -76,18 +78,19 @@ Ext.define('Crud.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
+        title: 'Speakers',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'mainlist',
+            store: {
+                type: 'records',
+                model: 'Crud.model.Candidate'
+            }
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        title: 'Sessions',
+        iconCls: 'fa-user'
     }, {
         title: 'Groups',
         iconCls: 'fa-users',

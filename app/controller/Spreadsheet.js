@@ -6,6 +6,7 @@ Ext.define('Crud.controller.Spreadsheet', {
       var grid = this.getView();
       Ext.Msg.prompt('Add Column', 'New column name:', function(btn, text) {
         if(btn === 'ok') {
+					console.log(grid.getStore().getModel().prototype);
           grid.getStore().getModel().prototype.createField(text, 'text', function(response) {
             console.log('Success', response);
             grid.fieldsToColumns([{name: text}]);
@@ -16,7 +17,7 @@ Ext.define('Crud.controller.Spreadsheet', {
 
     onAddRow: function(){
         // Create a model instance
-        var rec = new Crud.model.Speaker({});
+				var rec = new (this.getView().getStore().model)({});
 
         this.getView().getStore().insert(0, rec);
         this.getView().findPlugin('cellediting').startEditByPosition({
