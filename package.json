@@ -1,0 +1,24 @@
+{
+  "name": "ext-postgrest-crud",
+  "version": "1.0.0",
+  "description": "[![Stories in Ready](https://badge.waffle.io/timwis/ext-postgrest-crud.png?label=ready&title=Ready)](https://waffle.io/timwis/ext-postgrest-crud) # Ext.js CRUD An Ext.js-powered, spreadsheet-style Grid for Create/Read/Update/Delete against a postgres database with a [PostgREST API](https://github.com/begriffs/postgrest) in front of it",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timwis/ext-postgrest-crud.git"
+  },
+  "author": "",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/timwis/ext-postgrest-crud/issues"
+  },
+  "homepage": "https://github.com/timwis/ext-postgrest-crud",
+  "dependencies": {
+    "jarvus-apikit": "jarvusinnovations/jarvus-apikit",
+    "jarvus-hotfixes": "jarvusinnovations/sencha-hotfixes#ext/6/0/0/640",
+    "jarvus-postgrest-apikit": "timwis/jarvus-postgrest-apikit#issue-1"
+  }
+}

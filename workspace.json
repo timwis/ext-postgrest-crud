@@ -14,11 +14,11 @@
          * This folder contains all local packages.
          * If a comma-separated string is used as value the first path will be used as the path to generate new packages.
          */
-        "dir": "${workspace.dir}/packages/local,${workspace.dir}/packages",
+        "dir": "${workspace.dir}/node_modules/local,${workspace.dir}/node_modules",
 
         /**
          * This folder contains all extracted (remote) packages.
          */
-        "extract": "${workspace.dir}/packages/remote"
+        "extract": "${workspace.dir}/node_modules/remote"
     }
 }
