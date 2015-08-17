@@ -4,5 +4,4 @@ build
 ext
 bootstrap.js
 .log
-sass/example
 node_modules
