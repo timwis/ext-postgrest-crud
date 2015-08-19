@@ -5,3 +5,5 @@ ext
 bootstrap.js
 .log
 node_modules
+classic.json
+sass/example/bootstrap.json
