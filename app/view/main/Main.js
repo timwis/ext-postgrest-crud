@@ -99,17 +99,5 @@ Ext.define('Crud.view.main.Main', {
                 model: 'Crud.model.Office'
             }
         }]
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
     }]
 });
